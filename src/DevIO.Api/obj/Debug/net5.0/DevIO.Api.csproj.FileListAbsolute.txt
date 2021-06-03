@@ -57,3 +57,7 @@ D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\DevIO.Data.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\DevIO.Business.pdb
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\DevIO.Data.pdb
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\obj\Debug\net5.0\DevIO.Api.csproj.CopyComplete
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\AutoMapper.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Humanizer.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

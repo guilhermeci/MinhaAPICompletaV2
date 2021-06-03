@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIO.Business", "src\DevIO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIO.Data", "src\DevIO.Data\DevIO.Data.csproj", "{7B7E66AA-F53D-4399-B0A9-CD2CBBD365BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevIO.Api", "src\DevIO.Api\DevIO.Api.csproj", "{53E92022-7C43-41D5-9DE1-6F0CD40653C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevIO.Api", "src\DevIO.Api\DevIO.Api.csproj", "{53E92022-7C43-41D5-9DE1-6F0CD40653C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42FFD170-2B1A-43BE-BD1F-9E85F442176D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
