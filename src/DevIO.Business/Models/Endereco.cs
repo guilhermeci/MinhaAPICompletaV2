@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace DevIO.Business.Models
 {
@@ -14,6 +15,7 @@ namespace DevIO.Business.Models
         public string Estado { get; set; }
 
         /* EF Relation */
+        [JsonIgnore]
         public Fornecedor Fornecedor { get; set; }
     }
 }
