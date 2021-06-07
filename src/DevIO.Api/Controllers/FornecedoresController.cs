@@ -52,6 +52,7 @@ namespace DevIO.Api.Controllers
 
             return CustomResponse(fornecedorViewModel);
         }
+
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {

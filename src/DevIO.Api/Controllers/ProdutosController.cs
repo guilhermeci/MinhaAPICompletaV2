@@ -62,6 +62,41 @@ namespace DevIO.Api.Controllers
             return CustomResponse(produtoViewModel);
         }
 
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult>Atualizar (Guid id, ProdutoViewModel produtoViewModel)
+        {
+            if (id != produtoViewModel.Id)
+            {
+                NotificarErro("Os ids informados não são iguais");
+                return CustomResponse();
+            }
+
+
+            var produtoAtualizado = await ObterProduto(id);
+            produtoViewModel.Imagem = produtoAtualizado.Imagem;
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            if(produtoViewModel.ImagemUpload != null)
+            {
+                var imagemNome = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
+                if(!UploadArquivo(produtoViewModel.ImagemUpload, imagemNome))
+                {
+                    return CustomResponse(ModelState);
+                }
+                produtoAtualizado.Imagem = imagemNome;
+            }
+
+            produtoAtualizado.Nome = produtoViewModel.Nome;
+            produtoAtualizado.Descricao = produtoViewModel.Descricao;
+            produtoAtualizado.Valor = produtoViewModel.Valor;
+            produtoAtualizado.Ativo = produtoViewModel.Ativo;
+
+            await _produtoService.Atualizar(_mapper.Map<Produto>(produtoAtualizado));
+
+            return CustomResponse(produtoViewModel);
+
+        }
+
         [HttpPost("Adicionar")]
         public async Task<ActionResult<ProdutoViewModel>> AdicionarAlternativo(ProdutoImagemViewModel produtoViewModel)
         {
