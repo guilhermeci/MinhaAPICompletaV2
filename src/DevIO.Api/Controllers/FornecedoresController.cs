@@ -3,6 +3,7 @@ using DevIO.Api.ViewModels;
 using DevIO.Business.Interfaces;
 using DevIO.Business.Models;
 using DevIO.Business.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace DevIO.Api.Controllers
 {
+    [Authorize]
     [Route("api/v1/fornecedores")]
     public class FornecedoresController: MainController
     {
@@ -29,12 +31,14 @@ namespace DevIO.Api.Controllers
             _enderecoRepository = enderecoRepository;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
         {
             var fornecedor = _mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos());
             return fornecedor;
         }
+
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> ObterPorId(Guid id)
         {
