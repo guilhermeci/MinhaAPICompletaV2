@@ -50,8 +50,8 @@ namespace DevIO.Api
                 app.UseDeveloperExceptionPage();
             }
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseMvcConfiguration();
 
         }

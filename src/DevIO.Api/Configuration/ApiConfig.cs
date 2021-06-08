@@ -36,9 +36,6 @@ namespace DevIO.Api.Configuration
                 endpoints.MapControllers();
             });
             
-
-            app.UseAuthorization();
-
             return app;
         }
     }

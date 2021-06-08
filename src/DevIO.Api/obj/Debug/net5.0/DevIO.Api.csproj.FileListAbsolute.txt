@@ -74,3 +74,4 @@ D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspN
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\obj\Debug\net5.0\DevIO.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
