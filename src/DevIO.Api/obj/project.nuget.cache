@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BUVpBCeVXq72oc0a6lBhPPsTbqMhaIMqh4X81xsQWQoTrWQ9VFgb+SDtq1m0IVtekjm+Xo0ibOEB54JXintG4A==",
+  "dgSpecHash": "IfeyEDPWrYA93yV/tUDjPKrUuRqI18y1VTRBHpbl7odDk5JPNa9klSCIg0ebFHtoSev8g2OT112qspnYV4NtyA==",
   "success": true,
   "projectFilePath": "D:\\curso.dev.io\\MinhaAPICompletaV2\\src\\DevIO.Api\\DevIO.Api.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.6\\microsoft.aspnetcore.identity.ui.5.0.6.nupkg.sha512",
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.6\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.6.nupkg.sha512",
+    "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\guilherme\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

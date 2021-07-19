@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DevIO.Api.Controllers;
 using DevIO.Api.Extensions;
 using DevIO.Api.ViewModels;
 using DevIO.Business.Interfaces;
@@ -10,11 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DevIO.Api.Controllers
+namespace DevIO.Api.V1.Controllers
 {
     [Authorize]
-    [Route("api/v1/fornecedores")]
-    public class FornecedoresController: MainController
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/fornecedores")]
+    public class FornecedoresController : MainController
     {
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IFornecedorService _fornecedorService;
@@ -54,7 +56,7 @@ namespace DevIO.Api.Controllers
         public async Task<ActionResult<FornecedorViewModel>> Adicionar(FornecedorViewModel fornecedorViewModel)
         {
 
-            if(UsuarioAutenticado)
+            if (UsuarioAutenticado)
             {
                 var userName = AppUser.Name;
             }
@@ -69,7 +71,7 @@ namespace DevIO.Api.Controllers
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
-            if (id != fornecedorViewModel.Id) 
+            if (id != fornecedorViewModel.Id)
             {
                 NotificarErro("O id informado nã é o mesmo que foi passado na query");
                 return CustomResponse(fornecedorViewModel);
@@ -119,7 +121,7 @@ namespace DevIO.Api.Controllers
         }
         private async Task<FornecedorViewModel> ObterFornecedorProdutosEndereco(Guid id)
         {
-            return  _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
+            return _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
         }
         private async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id)
         {

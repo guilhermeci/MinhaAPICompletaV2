@@ -22,7 +22,7 @@ namespace DevIO.Api.Controllers
             _notificador = notificador;
             AppUser = appUser;
 
-            if(appUser.IsAuthenticated())
+            if (appUser.IsAuthenticated())
             {
                 UsuarioId = appUser.GetUserId();
                 UsuarioAutenticado = true;
@@ -33,9 +33,9 @@ namespace DevIO.Api.Controllers
         {
             return !_notificador.TemNotificacao();
         }
-        protected ActionResult CustomResponse(object result = null)        
-        { 
-            if(OperacaoValida())
+        protected ActionResult CustomResponse(object result = null)
+        {
+            if (OperacaoValida())
             {
                 return Ok(new
                 {
@@ -48,16 +48,16 @@ namespace DevIO.Api.Controllers
                 sucess = false,
                 errors = _notificador.ObterNotificacoes().Select(n => n.Mensagem)
             });
-        } 
+        }
         protected ActionResult CustomResponse(ModelStateDictionary modelState)
         {
-            if(!modelState.IsValid) NotificarErroModelInvalida(modelState);
+            if (!modelState.IsValid) NotificarErroModelInvalida(modelState);
             return CustomResponse();
         }
         protected void NotificarErroModelInvalida(ModelStateDictionary modelState)
         {
             var erros = modelState.Values.SelectMany(e => e.Errors);
-            foreach(var erro in erros)
+            foreach (var erro in erros)
             {
                 var errorMsg = erro.Exception == null ? erro.ErrorMessage : erro.Exception.Message;
                 NotificarErro(errorMsg);

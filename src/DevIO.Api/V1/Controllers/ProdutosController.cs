@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DevIO.Api.Controllers;
 using DevIO.Api.ViewModels;
 using DevIO.Business.Interfaces;
 using DevIO.Business.Models;
@@ -11,10 +12,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DevIO.Api.Controllers
+namespace DevIO.Api.V1.Controllers
 {
-    [Route("api/v1/produtos")]
-    public class ProdutosController: MainController
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/produtos")]
+    public class ProdutosController : MainController
     {
         private readonly IProdutoRepository _produtoRepository;
         private readonly IProdutoService _produtoService;
@@ -64,7 +66,7 @@ namespace DevIO.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult>Atualizar (Guid id, ProdutoViewModel produtoViewModel)
+        public async Task<IActionResult> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
             if (id != produtoViewModel.Id)
             {
@@ -77,10 +79,10 @@ namespace DevIO.Api.Controllers
             produtoViewModel.Imagem = produtoAtualizado.Imagem;
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            if(produtoViewModel.ImagemUpload != null)
+            if (produtoViewModel.ImagemUpload != null)
             {
                 var imagemNome = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
-                if(!UploadArquivo(produtoViewModel.ImagemUpload, imagemNome))
+                if (!UploadArquivo(produtoViewModel.ImagemUpload, imagemNome))
                 {
                     return CustomResponse(ModelState);
                 }
@@ -103,7 +105,7 @@ namespace DevIO.Api.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var imgPrefixo = Guid.NewGuid() + "_" ;
+            var imgPrefixo = Guid.NewGuid() + "_";
             if (!await UploadArquivoAlternativo(produtoViewModel.ImagemUpload, imgPrefixo))
             {
                 return CustomResponse(ModelState);

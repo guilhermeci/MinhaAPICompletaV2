@@ -1,4 +1,5 @@
-﻿using DevIO.Api.Extensions;
+﻿using DevIO.Api.Controllers;
+using DevIO.Api.Extensions;
 using DevIO.Api.ViewModels;
 using DevIO.Business.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -13,16 +14,17 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevIO.Api.Controllers
+namespace DevIO.Api.V1.Controllers
 {
-    [Route("api/v1")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
-        public AuthController(  INotificador notificador
+        public AuthController(INotificador notificador
                                 , SignInManager<IdentityUser> signInManager
                                 , UserManager<IdentityUser> userManager
                                 , IOptions<AppSettings> appSettings
@@ -34,11 +36,12 @@ namespace DevIO.Api.Controllers
         }
 
         [HttpPost("nova-conta")]
-        public async Task<ActionResult> Registrar (RegisterUserViewModel registerUser)
+        public async Task<ActionResult> Registrar(RegisterUserViewModel registerUser)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var user = new IdentityUser {
+            var user = new IdentityUser
+            {
                 UserName = registerUser.Email,
                 Email = registerUser.Email,
                 EmailConfirmed = true
@@ -46,12 +49,12 @@ namespace DevIO.Api.Controllers
 
             var result = await _userManager.CreateAsync(user, registerUser.Password);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
                 return CustomResponse(await GerarJwt(user.Email));
             }
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 NotificarErro(error.Description);
             }
@@ -65,11 +68,11 @@ namespace DevIO.Api.Controllers
 
             var result = await _signInManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 return CustomResponse(await GerarJwt(loginUser.Email));
             }
-            if(result.IsLockedOut)
+            if (result.IsLockedOut)
             {
                 NotificarErro("Usuario temporariamente bloqueado por tentativas inválidas");
                 return CustomResponse(loginUser);
@@ -89,7 +92,7 @@ namespace DevIO.Api.Controllers
             claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString()));
             claims.Add(new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(DateTime.UtcNow).ToString(), ClaimValueTypes.Integer64));
 
-            foreach(var userRole in userRoles)
+            foreach (var userRole in userRoles)
             {
                 claims.Add(new Claim("role", userRole));
             }
@@ -105,19 +108,21 @@ namespace DevIO.Api.Controllers
                 Audience = _appSettings.ValidoEm,
                 Subject = identityClaims,
                 Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
-                SigningCredentials = new SigningCredentials ( 
-                                                        new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature                                        )
-            }) ;
+                SigningCredentials = new SigningCredentials(
+                                                        new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            });
             var encodedToken = tokenHandler.WriteToken(token);
 
-            var response = new LoginResponseViewModel {
+            var response = new LoginResponseViewModel
+            {
                 AccessToken = encodedToken,
                 ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
-                UserToken = new UserTokenViewModel 
-                { 
+                UserToken = new UserTokenViewModel
+                {
                     Id = user.Id,
-                    Email = user.Email, 
-                    Claims = claims.Select(c => new ClaimViewModel { Type =c.Type, Value = c.Value })}
+                    Email = user.Email,
+                    Claims = claims.Select(c => new ClaimViewModel { Type = c.Type, Value = c.Value })
+                }
             };
             return response;
         }
