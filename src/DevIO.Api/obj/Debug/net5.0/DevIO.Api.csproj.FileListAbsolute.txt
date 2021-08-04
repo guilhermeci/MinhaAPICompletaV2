@@ -77,3 +77,10 @@ D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\obj\Debug\net5.0\DevIO.Api.MvcA
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\System.Web.Http.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.Core.dll
