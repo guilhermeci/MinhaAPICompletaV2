@@ -52,6 +52,8 @@ namespace DevIO.Api.Configuration
         }
         public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
+            //criando uma restrição ao swagger
+            //app.UseMiddleware<SwaggerAuthorizedMiddleware>();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -66,6 +68,7 @@ namespace DevIO.Api.Configuration
                         options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
                     }
             });
+           
             return app;
         }
     }
