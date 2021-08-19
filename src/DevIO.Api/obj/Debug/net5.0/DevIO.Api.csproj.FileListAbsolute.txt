@@ -84,3 +84,7 @@ D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.As
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\System.Net.Http.Formatting.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\System.Web.Http.dll
 D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Swashbuckle.Core.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Elmah.Io.AspNetCore.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Elmah.Io.Client.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Microsoft.Rest.ClientRuntime.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Api\bin\Debug\net5.0\Elmah.Io.Extensions.Logging.dll
