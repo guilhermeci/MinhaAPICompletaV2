@@ -1,6 +1,7 @@
 using DevIO.Api.Configuration;
 using DevIO.Api.Extensions;
 using DevIO.Data.Context;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -44,7 +45,10 @@ namespace DevIO.Api
 
             services.ResolveDependencies();
             services.AddSwaggerConfig();
-            services.AddLoggingConfiguration();
+
+            
+
+            services.AddLoggingConfiguration(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +75,8 @@ namespace DevIO.Api
             app.UseMvcConfiguration();
             app.UseSwaggerConfig(provider);
             app.UseLoggingConfiguration();
+
+            
         }
     }
 }

@@ -23,5 +23,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\guilherme\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <Pkgelmah_io Condition=" '$(Pkgelmah_io)' == '' ">C:\Users\guilherme\.nuget\packages\elmah.io\4.0.25</Pkgelmah_io>
   </PropertyGroup>
 </Project>

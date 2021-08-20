@@ -59,6 +59,10 @@ namespace DevIO.Api.Configuration
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecksUI(setup => {
+                    setup.ApiPath = "/api/hc1";
+                    setup.UIPath = "/hc-ui";
+                });
             });
             
             return app;
