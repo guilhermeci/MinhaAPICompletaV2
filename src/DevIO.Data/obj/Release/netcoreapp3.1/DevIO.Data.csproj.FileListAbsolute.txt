@@ -1,0 +1,15 @@
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Data.deps.json
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Data.runtimeconfig.json
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Data.runtimeconfig.dev.json
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Data.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Data.pdb
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Business.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\bin\Release\netcoreapp3.1\DevIO.Business.pdb
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.csprojAssemblyReference.cache
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.AssemblyInfoInputs.cache
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.AssemblyInfo.cs
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.csproj.CoreCompileInputs.cache
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.csproj.CopyComplete
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.dll
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.pdb
+D:\curso.dev.io\MinhaAPICompletaV2\src\DevIO.Data\obj\Release\netcoreapp3.1\DevIO.Data.genruntimeconfig.cache

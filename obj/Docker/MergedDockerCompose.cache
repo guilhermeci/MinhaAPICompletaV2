@@ -1,0 +1,19 @@
+services:
+  Minha-API-Dev-IO:
+    build:
+      context: D:\curso.dev.io\MinhaAPICompletaV2
+      dockerfile: src/DevIO.Api/Dockerfile
+    image: devioapi
+  db:
+    build:
+      context: D:\curso.dev.io\MinhaAPICompletaV2
+      dockerfile: sql/Dockerfile
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Numsey@Password!
+    image: dev-io-api
+    ports:
+    - published: 5434
+      target: 1433
+    restart: always
+version: '3.4'

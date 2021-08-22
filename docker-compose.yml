@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  db:
+    image: "dev-io-api"
+    environment:
+      SA_PASSWORD: "Numsey@Password!"
+      ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+      - "5434:1433"
+    build:
+      context: .
+      dockerfile: sql/Dockerfile
+      
+  Minha-API-Dev-IO:
+    image: ${DOCKER_REGISTRY-}devioapi
+    build:
+      context: .
+      dockerfile: src/DevIO.Api/Dockerfile
